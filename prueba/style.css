@@ -1,0 +1,336 @@
+/* ═══════════════════════════════════════
+   CARNET DE SECUNDARIA
+   6.5 cm × 8.5 cm = 245px × 321px @ 96dpi
+   ═══════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  background: #1e293b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 40px 20px;
+}
+
+.page-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+
+.page-size {
+  font-size: 8px;
+  color: rgba(255,255,255,0.18);
+  letter-spacing: 0.08em;
+}
+
+/* ── Flip ────────────────────────────── */
+.flip-scene {
+  width: 245px;
+  height: 321px;
+  perspective: 900px;
+  cursor: pointer;
+}
+
+.flip-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.65s cubic-bezier(.4,.2,.2,1);
+}
+
+.flip-scene.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.card-side {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* ══════════════════════════════════════
+   FRONTAL
+   ══════════════════════════════════════ */
+.front {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 48px rgba(0,0,0,0.5);
+}
+
+/* — Encabezado — */
+.f-header {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+  padding: 10px 10px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  /* ola decorativa en el borde inferior */
+  clip-path: ellipse(130% 100% at 50% 0%);
+}
+
+.f-logo { font-size: 20px; line-height: 1; }
+
+.f-school {
+  font-size: 7px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+.f-faculty {
+  font-size: 5.5px;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.05em;
+}
+
+.f-badge {
+  margin-top: 3px;
+  font-size: 5.5px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #1e3a8a;
+  background: rgba(255,255,255,0.92);
+  padding: 2px 10px;
+  border-radius: 99px;
+}
+
+/* — Identidad — */
+.f-identity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin-top: -16px;   /* sube sobre la ola */
+  padding: 0 10px;
+}
+
+.f-photo {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #fff;
+  box-shadow: 0 3px 12px rgba(30,58,138,0.2);
+  background: #bfdbfe;
+  flex-shrink: 0;
+}
+
+.f-name {
+  font-size: 10px;
+  font-weight: 800;
+  color: #0f172a;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.f-pill {
+  font-size: 6.5px;
+  font-weight: 600;
+  color: #2563eb;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  padding: 2px 9px;
+  border-radius: 99px;
+}
+
+/* — Datos — */
+.f-data {
+  margin: 8px 10px 0;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 9px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.f-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 9px;
+}
+
+.f-row + .f-row { border-top: 1px solid #e2e8f0; }
+
+.f-lbl {
+  font-size: 5.8px;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.f-val {
+  font-size: 7.5px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.f-val.green { color: #16a34a; }
+
+/* — Código de barras — */
+.f-footer {
+  margin-top: auto;      /* empuja al fondo */
+  background: #f1f5f9;
+  border-top: 1px solid #e2e8f0;
+  padding: 6px 10px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.barcode {
+  width: 155px;
+  height: 20px;
+  background: repeating-linear-gradient(
+    to right,
+    #1e293b 0px, #1e293b 1.5px,
+    transparent 1.5px, transparent 3px,
+    #1e293b 3px, #1e293b 5px,
+    transparent 5px, transparent 7px,
+    #1e293b 7px, #1e293b 9.5px,
+    transparent 9.5px, transparent 11px,
+    #1e293b 11px, #1e293b 12.5px,
+    transparent 12.5px, transparent 15px,
+    #1e293b 15px, #1e293b 17px,
+    transparent 17px, transparent 19px,
+    #1e293b 19px, #1e293b 21px,
+    transparent 21px, transparent 23px,
+    #1e293b 23px, #1e293b 25.5px,
+    transparent 25.5px, transparent 28px
+  );
+  border-radius: 1px;
+  opacity: 0.85;
+}
+
+.barcode-id {
+  font-size: 5px;
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+  color: #64748b;
+  letter-spacing: 0.1em;
+}
+
+/* ══════════════════════════════════════
+   TRASERA
+   ══════════════════════════════════════ */
+.back {
+  background: linear-gradient(160deg, #0f172a, #1e293b);
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 48px rgba(0,0,0,0.6);
+}
+
+/* — Header reverso — */
+.b-header {
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  padding: 10px 12px 9px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.b-title {
+  font-size: 8px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.04em;
+}
+
+.b-sub {
+  font-size: 5.5px;
+  color: rgba(255,255,255,0.5);
+}
+
+/* — Lista de contactos — */
+.b-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px 10px 0;
+}
+
+.b-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 9px;
+  padding: 7px 9px;
+}
+
+.b-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #fff;
+}
+
+.b-icon--wa    { background: #16a34a; }
+.b-icon--phone { background: #2563eb; }
+.b-icon--home  { background: #7c3aed; }
+
+.b-lbl {
+  font-size: 5.5px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1px;
+}
+
+.b-val {
+  font-size: 8px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.9);
+}
+
+.b-sub {
+  font-size: 6.5px;
+  color: rgba(255,255,255,0.45);
+  margin-top: 1px;
+}
+
+/* — Nota legal — */
+.b-note {
+  margin-top: auto;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 8px 12px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.b-note p {
+  font-size: 6px;
+  color: rgba(255,255,255,0.25);
+  line-height: 1.6;
+}
+
+.b-tel {
+  color: rgba(255,255,255,0.35) !important;
+  font-weight: 600;
+}

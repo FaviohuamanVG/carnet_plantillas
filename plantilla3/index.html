@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plantilla 3 — Carnet Diseño Libre</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <p class="page-label">Plantilla 3 · Diseño Libre · Clic para voltear</p>
+
+  <div class="flip-scene" id="card" onclick="this.classList.toggle('flipped')">
+    <div class="flip-inner">
+
+      <!-- ══════ FRONTAL ══════ -->
+      <div class="card-side front">
+
+        <!-- Gradiente decorativo de fondo -->
+        <div class="f-bg-deco"></div>
+
+        <!-- Top: nombre del colegio -->
+        <div class="f-top">
+          <div class="f-top-logo">
+            <span>SB</span>
+          </div>
+          <div>
+            <p class="f-top-school">Simón Bolívar</p>
+            <p class="f-top-type">Carnet Estudiantil 2025</p>
+          </div>
+        </div>
+
+        <!-- Foto centrada con anillo de color -->
+        <div class="f-photo-wrap">
+          <div class="f-photo-ring"></div>
+          <div class="f-photo">
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+              <rect width="80" height="80" fill="#f0f9ff"/>
+              <circle cx="40" cy="30" r="18" fill="#38bdf8"/>
+              <ellipse cx="40" cy="72" rx="28" ry="20" fill="#38bdf8"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Nombre y nivel -->
+        <div class="f-identity">
+          <h1 class="f-name">María Isabel Rodríguez</h1>
+          <div class="f-tags">
+            <span class="f-tag f-tag--blue">3° Bachillerato</span>
+            <span class="f-tag f-tag--purple">Sección A</span>
+          </div>
+        </div>
+
+        <!-- Datos en chips -->
+        <div class="f-chips">
+          <div class="f-chip">
+            <span class="f-chip-icon">🎫</span>
+            <div>
+              <p class="f-chip-lbl">N° Estudiante</p>
+              <p class="f-chip-val">CSB-2025-084</p>
+            </div>
+          </div>
+          <div class="f-chip">
+            <span class="f-chip-icon">📅</span>
+            <div>
+              <p class="f-chip-lbl">Año lectivo</p>
+              <p class="f-chip-val">2025 – 2026</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vigencia -->
+        <div class="f-validity">
+          <span class="f-validity-dot"></span>
+          <span class="f-validity-text">Vigente hasta Julio 2026</span>
+        </div>
+
+      </div><!-- /front -->
+
+      <!-- ══════ TRASERA ══════ -->
+      <div class="card-side back">
+
+        <!-- Fondo deco -->
+        <div class="b-bg-deco"></div>
+
+        <!-- Header -->
+        <div class="b-header">
+          <p class="b-header-title">📞 Contacto & Emergencias</p>
+        </div>
+
+        <!-- QR decorativo + contactos -->
+        <div class="b-center">
+          <div class="b-qr">
+            <svg viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+              <rect width="21" height="21" fill="white"/>
+              <rect x="1" y="1" width="7" height="7" fill="#0f172a"/>
+              <rect x="2" y="2" width="5" height="5" fill="white"/>
+              <rect x="3" y="3" width="3" height="3" fill="#0f172a"/>
+              <rect x="13" y="1" width="7" height="7" fill="#0f172a"/>
+              <rect x="14" y="2" width="5" height="5" fill="white"/>
+              <rect x="15" y="3" width="3" height="3" fill="#0f172a"/>
+              <rect x="1" y="13" width="7" height="7" fill="#0f172a"/>
+              <rect x="2" y="14" width="5" height="5" fill="white"/>
+              <rect x="3" y="15" width="3" height="3" fill="#0f172a"/>
+              <rect x="9" y="1" width="1" height="1" fill="#0f172a"/>
+              <rect x="11" y="2" width="1" height="1" fill="#0f172a"/>
+              <rect x="9" y="4" width="2" height="1" fill="#0f172a"/>
+              <rect x="11" y="5" width="1" height="1" fill="#0f172a"/>
+              <rect x="9" y="7" width="1" height="1" fill="#0f172a"/>
+              <rect x="1" y="9" width="2" height="1" fill="#0f172a"/>
+              <rect x="4" y="9" width="1" height="1" fill="#0f172a"/>
+              <rect x="7" y="9" width="1" height="1" fill="#0f172a"/>
+              <rect x="9" y="9" width="2" height="1" fill="#0f172a"/>
+              <rect x="13" y="9" width="2" height="1" fill="#0f172a"/>
+              <rect x="17" y="9" width="2" height="1" fill="#0f172a"/>
+              <rect x="2" y="11" width="1" height="1" fill="#0f172a"/>
+              <rect x="5" y="11" width="2" height="1" fill="#0f172a"/>
+              <rect x="9" y="11" width="1" height="1" fill="#0f172a"/>
+              <rect x="12" y="11" width="2" height="1" fill="#0f172a"/>
+              <rect x="16" y="11" width="2" height="1" fill="#0f172a"/>
+              <rect x="10" y="13" width="2" height="1" fill="#0f172a"/>
+              <rect x="14" y="13" width="1" height="1" fill="#0f172a"/>
+              <rect x="17" y="13" width="3" height="1" fill="#0f172a"/>
+              <rect x="9" y="15" width="2" height="1" fill="#0f172a"/>
+              <rect x="13" y="15" width="3" height="1" fill="#0f172a"/>
+              <rect x="18" y="15" width="1" height="1" fill="#0f172a"/>
+              <rect x="10" y="17" width="1" height="1" fill="#0f172a"/>
+              <rect x="13" y="17" width="1" height="1" fill="#0f172a"/>
+              <rect x="16" y="17" width="2" height="1" fill="#0f172a"/>
+              <rect x="9" y="19" width="3" height="1" fill="#0f172a"/>
+              <rect x="14" y="19" width="2" height="1" fill="#0f172a"/>
+              <rect x="18" y="19" width="2" height="1" fill="#0f172a"/>
+            </svg>
+          </div>
+          <p class="b-qr-hint">Escanear para verificar</p>
+        </div>
+
+        <div class="b-contacts">
+          <div class="b-row">
+            <span class="b-dot b-dot--green"></span>
+            <div>
+              <p class="b-lbl">WhatsApp Apoderado</p>
+              <p class="b-val">+593 99 123 4567</p>
+            </div>
+          </div>
+          <div class="b-row">
+            <span class="b-dot b-dot--blue"></span>
+            <div>
+              <p class="b-lbl">Emergencia · Mamá (Ana Rodríguez)</p>
+              <p class="b-val">+593 98 765 4321</p>
+            </div>
+          </div>
+          <div class="b-row">
+            <span class="b-dot b-dot--purple"></span>
+            <div>
+              <p class="b-lbl">Dirección</p>
+              <p class="b-val">Av. Los Álamos N23-45, Quito</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="b-footer">
+          <p>Carnet personal e intransferible</p>
+          <p>☎ Secretaría: (02) 234-5678</p>
+        </div>
+
+      </div><!-- /back -->
+
+    </div>
+  </div>
+
+  <p class="page-size">6.5 × 8.5 cm · Diseño Libre</p>
+
+</body>
+</html>

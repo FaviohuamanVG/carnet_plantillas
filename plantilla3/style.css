@@ -1,0 +1,374 @@
+/* ═══════════════════════════════════════
+   PLANTILLA 3 — DISEÑO LIBRE
+   6.5 cm × 8.5 cm = 245px × 321px @ 96dpi
+   Estilo: sky + purple, chips modernos, QR
+   ═══════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at top-left, #1e1b4b 0%, #0c0a1e 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 40px 20px;
+}
+
+.page-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+
+.page-size {
+  font-size: 8px;
+  color: rgba(255,255,255,0.18);
+  letter-spacing: 0.08em;
+}
+
+/* ── Flip ────────────────────────────── */
+.flip-scene {
+  width: 245px;
+  height: 321px;
+  perspective: 900px;
+  cursor: pointer;
+}
+
+.flip-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.65s cubic-bezier(.4,.2,.2,1);
+}
+
+.flip-scene.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.card-side {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* ══════════════════════════════════════
+   FRONTAL — fondo claro con acento sky
+   ══════════════════════════════════════ */
+.front {
+  background: #f0f9ff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(56,189,248,0.2);
+}
+
+/* Decoración de fondo (arco superior) */
+.f-bg-deco {
+  position: absolute;
+  top: -60px;
+  left: -40px;
+  width: 250px;
+  height: 200px;
+  background: linear-gradient(135deg, #0ea5e9, #7c3aed);
+  border-radius: 50%;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+/* Top: logo y nombre colegio */
+.f-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 12px 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.f-top-logo {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #0ea5e9, #7c3aed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.f-top-school {
+  font-size: 7.5px;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.3;
+}
+
+.f-top-type {
+  font-size: 5.5px;
+  color: #64748b;
+  margin-top: 1px;
+}
+
+/* Foto con anillo de color */
+.f-photo-wrap {
+  position: relative;
+  width: 76px;
+  height: 76px;
+  align-self: center;
+  margin-top: 4px;
+}
+
+.f-photo-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0ea5e9, #7c3aed, #ec4899);
+  padding: 3px;
+}
+
+.f-photo {
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #f0f9ff;
+  background: #e0f2fe;
+}
+
+/* Nombre y tags */
+.f-identity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 12px 0;
+}
+
+.f-name {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  color: #0f172a;
+  text-align: center;
+  line-height: 1.25;
+}
+
+.f-tags {
+  display: flex;
+  gap: 4px;
+}
+
+.f-tag {
+  font-size: 6px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 99px;
+  letter-spacing: 0.04em;
+}
+
+.f-tag--blue   { background: #e0f2fe; color: #0284c7; border: 1px solid #bae6fd; }
+.f-tag--purple { background: #f3e8ff; color: #7c3aed; border: 1px solid #e9d5ff; }
+
+/* Chips de datos */
+.f-chips {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px 12px 0;
+}
+
+.f-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border: 1px solid #e0f2fe;
+  border-radius: 9px;
+  padding: 6px 10px;
+  box-shadow: 0 1px 4px rgba(14,165,233,0.08);
+}
+
+.f-chip-icon { font-size: 14px; flex-shrink: 0; }
+
+.f-chip-lbl {
+  font-size: 5.5px;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.f-chip-val {
+  font-size: 8px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 1px;
+}
+
+/* Vigencia */
+.f-validity {
+  margin: auto 12px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 99px;
+  padding: 4px 14px;
+}
+
+.f-validity-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34,197,94,0.2);
+  flex-shrink: 0;
+}
+
+.f-validity-text {
+  font-size: 7px;
+  font-weight: 700;
+  color: #16a34a;
+}
+
+/* ══════════════════════════════════════
+   TRASERA — fondo dark con acentos
+   ══════════════════════════════════════ */
+.back {
+  background: linear-gradient(160deg, #0f172a, #1e1b4b);
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 48px rgba(0,0,0,0.7), 0 0 0 1px rgba(139,92,246,0.2);
+}
+
+.b-bg-deco {
+  position: absolute;
+  bottom: -50px;
+  right: -40px;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(135deg, #7c3aed, #0ea5e9);
+  border-radius: 50%;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.b-header {
+  padding: 12px 12px 8px;
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.b-header-title {
+  font-size: 9px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.9);
+}
+
+/* QR centrado */
+.b-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 12px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.b-qr {
+  width: 68px;
+  height: 68px;
+  border-radius: 9px;
+  overflow: hidden;
+  padding: 5px;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.1), 0 4px 14px rgba(0,0,0,0.4);
+}
+
+.b-qr-hint {
+  font-size: 5.5px;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.06em;
+}
+
+/* Contactos con puntos de color */
+.b-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px 12px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.b-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 8px;
+  padding: 6px 8px;
+}
+
+.b-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.b-dot--green  { background: #22c55e; box-shadow: 0 0 0 2px rgba(34,197,94,0.2); }
+.b-dot--blue   { background: #38bdf8; box-shadow: 0 0 0 2px rgba(56,189,248,0.2); }
+.b-dot--purple { background: #a78bfa; box-shadow: 0 0 0 2px rgba(167,139,250,0.2); }
+
+.b-lbl {
+  font-size: 5.5px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1px;
+}
+
+.b-val {
+  font-size: 7.5px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.88);
+}
+
+/* Pie legal */
+.b-footer {
+  margin-top: auto;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 7px 12px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  position: relative;
+  z-index: 1;
+}
+
+.b-footer p {
+  font-size: 5.5px;
+  color: rgba(255,255,255,0.2);
+  line-height: 1.6;
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plantilla 2 — Carnet Horizontal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <p class="page-label">Plantilla 2 · Horizontal · Clic para voltear</p>
+
+  <div class="flip-scene" id="card" onclick="this.classList.toggle('flipped')">
+    <div class="flip-inner">
+
+      <!-- ══════ FRONTAL ══════ -->
+      <div class="card-side front">
+
+        <!-- Banda izquierda azul -->
+        <div class="f-strip">
+          <div class="f-strip-logo">🎓</div>
+          <p class="f-strip-year">2025</p>
+          <p class="f-strip-year">–</p>
+          <p class="f-strip-year">2026</p>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="f-body">
+
+          <!-- Encabezado del colegio -->
+          <div class="f-header">
+            <div>
+              <p class="f-school">Colegio Nacional Simón Bolívar</p>
+              <p class="f-faculty">Bachillerato General Unificado</p>
+            </div>
+            <span class="f-badge">ESTUDIANTE</span>
+          </div>
+
+          <!-- Separador -->
+          <div class="f-divider"></div>
+
+          <!-- Foto + datos lado a lado -->
+          <div class="f-identity">
+            <div class="f-photo">
+              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+                <rect width="80" height="80" fill="#bfdbfe"/>
+                <circle cx="40" cy="30" r="18" fill="#60a5fa"/>
+                <ellipse cx="40" cy="72" rx="28" ry="20" fill="#60a5fa"/>
+              </svg>
+            </div>
+            <div class="f-info">
+              <h1 class="f-name">María Isabel<br/>Rodríguez</h1>
+              <span class="f-pill">3° Bachillerato · Sección A</span>
+              <div class="f-data">
+                <div class="f-row">
+                  <span class="f-lbl">N° Estudiante</span>
+                  <span class="f-val">CSB-2025-084</span>
+                </div>
+                <div class="f-row">
+                  <span class="f-lbl">Vigencia</span>
+                  <span class="f-val green">Jul 2026 ✓</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Barcode en pie -->
+          <div class="f-footer">
+            <div class="barcode"></div>
+            <span class="barcode-id">*CSB-2025-084*</span>
+          </div>
+
+        </div>
+
+      </div><!-- /front -->
+
+      <!-- ══════ TRASERA ══════ -->
+      <div class="card-side back">
+
+        <!-- Banda derecha oscura decorativa -->
+        <div class="b-strip">
+          <p class="b-strip-text">C · O · N · T · A · C · T · O</p>
+        </div>
+
+        <!-- Contenido -->
+        <div class="b-body">
+
+          <div class="b-header">
+            <p class="b-title">Información de Emergencia</p>
+            <p class="b-sub">Colegio Nacional Simón Bolívar</p>
+          </div>
+
+          <div class="b-contacts">
+
+            <div class="b-card">
+              <div class="b-icon b-icon--wa">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.117 1.533 5.845L.068 23.512a.5.5 0 00.61.637l5.842-1.53A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.935 0-3.745-.524-5.297-1.437l-.38-.225-3.467.909.927-3.378-.247-.394A9.955 9.955 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="b-lbl">WhatsApp Apoderado</p>
+                <p class="b-val">+593 99 123 4567</p>
+              </div>
+            </div>
+
+            <div class="b-card">
+              <div class="b-icon b-icon--phone">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 13.5 19.79 19.79 0 01.02 4.82 2 2 0 012 2.67h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 10.5a16 16 0 006.4 6.41l1.19-1.19a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="b-lbl">Emergencia · Mamá</p>
+                <p class="b-val">Ana Rodríguez</p>
+                <p class="b-sub2">+593 98 765 4321</p>
+              </div>
+            </div>
+
+            <div class="b-card">
+              <div class="b-icon b-icon--home">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+                  <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+              </div>
+              <div>
+                <p class="b-lbl">Dirección</p>
+                <p class="b-val">Av. Los Álamos N23-45, Quito</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="b-note">
+            <p>Carnet personal e intransferible · Secretaría: (02) 234-5678</p>
+          </div>
+
+        </div><!-- /b-body -->
+
+      </div><!-- /back -->
+
+    </div>
+  </div>
+
+  <p class="page-size">8.5 × 6.5 cm · Horizontal</p>
+
+</body>
+</html>

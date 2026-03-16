@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plantillas de Carnet Estudiantil</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .card-hover { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+  </style>
+</head>
+<body class="min-h-screen bg-slate-900 flex flex-col items-center justify-center gap-10 px-6 py-14">
+
+  <!-- Título -->
+  <div class="text-center">
+    <h1 class="text-white text-2xl font-extrabold tracking-tight">🎓 Plantillas de Carnet Estudiantil</h1>
+    <p class="text-white/40 text-sm mt-2">Haz clic en cualquier plantilla para verla</p>
+  </div>
+
+  <!-- Grid de plantillas -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-2xl">
+
+    <!-- Plantilla 1 -->
+    <a href="prueba/index.html" class="card-hover block bg-white/5 border border-white/10 rounded-2xl p-6 text-center no-underline">
+      <div class="text-4xl mb-4">🪪</div>
+      <span class="inline-block bg-blue-500/20 text-blue-300 text-xs font-bold px-3 py-1 rounded-full mb-3">PLANTILLA 1</span>
+      <h2 class="text-white font-bold text-base mb-1">Vertical Clásico</h2>
+      <p class="text-white/40 text-xs leading-relaxed">6.5 × 8.5 cm<br/>Diseño azul con barcode</p>
+      <div class="mt-5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-700 font-bold py-2 px-4 rounded-lg transition-colors">
+        Abrir →
+      </div>
+    </a>
+
+    <!-- Plantilla 2 -->
+    <a href="plantilla2/index.html" class="card-hover block bg-white/5 border border-white/10 rounded-2xl p-6 text-center no-underline">
+      <div class="text-4xl mb-4">📋</div>
+      <span class="inline-block bg-purple-500/20 text-purple-300 text-xs font-bold px-3 py-1 rounded-full mb-3">PLANTILLA 2</span>
+      <h2 class="text-white font-bold text-base mb-1">Horizontal</h2>
+      <p class="text-white/40 text-xs leading-relaxed">8.5 × 6.5 cm<br/>Banda lateral + foto rectangular</p>
+      <div class="mt-5 bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold py-2 px-4 rounded-lg transition-colors">
+        Abrir →
+      </div>
+    </a>
+
+    <!-- Plantilla 3 -->
+    <a href="plantilla3/index.html" class="card-hover block bg-white/5 border border-white/10 rounded-2xl p-6 text-center no-underline">
+      <div class="text-4xl mb-4">✨</div>
+      <span class="inline-block bg-sky-500/20 text-sky-300 text-xs font-bold px-3 py-1 rounded-full mb-3">PLANTILLA 3</span>
+      <h2 class="text-white font-bold text-base mb-1">Diseño Libre</h2>
+      <p class="text-white/40 text-xs leading-relaxed">6.5 × 8.5 cm<br/>Sky + purple, chips, QR code</p>
+      <div class="mt-5 bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold py-2 px-4 rounded-lg transition-colors">
+        Abrir →
+      </div>
+    </a>
+
+  </div>
+
+  <p class="text-white/20 text-xs">Colegio Nacional Simón Bolívar · 2025–2026</p>
+
+</body>
+</html>
